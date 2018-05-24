@@ -80,6 +80,8 @@ public class Array<E> {
      *
      * @param index 需要插入的下标
      * @param e     需要插入的元素
+     *
+     *              O(n)
      */
     public void add(int index, E e) {
 
@@ -110,6 +112,14 @@ public class Array<E> {
             throw new IllegalArgumentException("Get Failed. Index is illegal.");
 
         return data[index];
+    }
+
+    public E getLast(){
+        return get(size-1);
+    }
+
+    public E getFirst(){
+        return get(0);
     }
 
     /**
@@ -172,6 +182,7 @@ public class Array<E> {
         //将末尾元素置为空
         data[size] = null;
 
+        //resize
         if (size == data.length / 2)
             resize(data.length / 2);
 
@@ -225,6 +236,10 @@ public class Array<E> {
         return res.toString();
     }
 
+    /**
+     * 动态调整数组容量
+     * @param newCapacity
+     */
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity];
         for (int i = 0; i < size; i++) {
