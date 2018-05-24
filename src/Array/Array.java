@@ -172,6 +172,9 @@ public class Array<E> {
         //将末尾元素置为空
         data[size] = null;
 
+        if (size == data.length / 2)
+            resize(data.length / 2);
+
         return ret;
     }
 
@@ -222,7 +225,7 @@ public class Array<E> {
         return res.toString();
     }
 
-    private void resize(int newCapacity){
+    private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity];
         for (int i = 0; i < size; i++) {
             newData[i] = data[i];

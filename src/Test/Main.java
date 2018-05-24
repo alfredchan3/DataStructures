@@ -20,13 +20,13 @@ public class Main {
 
         System.out.println(arr);
 
-//        arr.remove(2);
-//        System.out.println(arr);
-//
-//        arr.removeElement(4);
-//        System.out.println(arr);
-//
-//        arr.removeFirst();
-//        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+
+        arr.removeElement(4);
+        System.out.println(arr);
+
+        arr.removeFirst();
+        System.out.println(arr);
     }
 }
